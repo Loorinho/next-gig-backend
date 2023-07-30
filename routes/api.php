@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
 
+Route::post('/gigs', [GigController::class, 'createGig']);
+Route::get('/gigs', [GigController::class, 'listGigs']);
 
 Route::get("/test", function (Request $request) {
     return "Hello everyone";
