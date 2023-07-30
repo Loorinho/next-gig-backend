@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GigModel extends Model
+class Gig extends Model
 {
     use HasFactory;
 
@@ -14,6 +14,6 @@ class GigModel extends Model
         'description',
         'price',
         'location',
-        
     ];
+
 }
