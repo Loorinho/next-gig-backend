@@ -18,7 +18,7 @@ class GigController extends Controller
 
         return response()->json([
             'message'=> $gig->title .' gig created successfully'
-        ]);
+        ],200);
     }
 
     public function listGigs(Request $request)
@@ -27,7 +27,7 @@ class GigController extends Controller
 
         return response()->json([
             'gigs' => $gigs
-        ]);
+        ],200);
     }
 
    
