@@ -32,9 +32,9 @@ class AuthenticationController extends Controller
         {
             return response()->json([
                 'message' => 'Invalid login credentials'
-            ]);
+            ], 401);
         }
         $accessToken = $user->createToken('access_token')->accessToken;
-        return response()->json(['message' => 'Logged in successfully', 'access_token' => $accessToken]);
+        return response()->json(['logged_in'=>true,'message' => 'Logged in successfully', 'access_token' => $accessToken],200);
     }
 }
