@@ -24,6 +24,7 @@ Route::post('/login', [AuthenticationController::class, 'login']);
 
 Route::post('/gigs', [GigController::class, 'createGig']);
 Route::get('/gigs', [GigController::class, 'listGigs']);
+Route::get('/gigs/{id}', [GigController::class, 'showGig']);
 
 Route::get("/test", function (Request $request) {
     return "Hello everyone";
