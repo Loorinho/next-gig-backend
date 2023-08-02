@@ -19,16 +19,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// Authentication routes
 Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
 
+
+// Gigs CRUD routes
 Route::post('/gigs', [GigController::class, 'createGig']);
 Route::get('/gigs', [GigController::class, 'listGigs']);
 Route::get('/gigs/{id}', [GigController::class, 'getGig']);
-
-Route::get("/test", function (Request $request) {
-    return "Hello everyone";
-});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
