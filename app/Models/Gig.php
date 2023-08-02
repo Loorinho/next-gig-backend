@@ -14,6 +14,7 @@ class Gig extends Model
         'description',
         'price',
         'location',
+        'date'
     ];
 
 }
