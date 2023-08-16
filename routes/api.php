@@ -29,9 +29,8 @@ Route::post('/gigs', [GigController::class, 'createGig']);
 Route::get('/gigs', [GigController::class, 'listGigs']);
 Route::get('/gigs/{id}', [GigController::class, 'getGig']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+// // Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
