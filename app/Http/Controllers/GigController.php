@@ -17,7 +17,7 @@ class GigController extends Controller
             'price' => $request->price,
             'date'=> $request->date
         ]);
-        $gigs = Gig::all();
+        $gigs = Gig::all()->load("user");
 
         return response()->json([
             'message'=> $gig->title .' gig created successfully',
@@ -28,7 +28,7 @@ class GigController extends Controller
 
     public function listGigs()
     {
-        $gigs = Gig::all();
+        $gigs = Gig::all()->load('user');
 
         return response()->json([
             'gigs' => $gigs
@@ -37,7 +37,7 @@ class GigController extends Controller
 
     public function getGig($id)
     {
-        $gig = Gig::find($id);
+        $gig = Gig::find($id)->load('user');
 
         return response()->json([
             'gig' => $gig
