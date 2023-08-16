@@ -17,4 +17,9 @@ class Gig extends Model
         'date'
     ];
 
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
