@@ -15,7 +15,8 @@ class GigController extends Controller
             'description' => $request->description,
             'location' => $request->location,
             'price' => $request->price,
-            'date'=> $request->date
+            'date'=> $request->date,
+            'user_id'=> $request->userId               
         ]);
         $gigs = Gig::all()->load("user");
 
