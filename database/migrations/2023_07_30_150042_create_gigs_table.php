@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('gigs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+           // $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('description');
-            $table->string('location');
+            $table->string('location');    
             $table->integer('price');
             $table->date('date')->nullable();
             $table->timestamps();
