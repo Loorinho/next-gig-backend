@@ -14,7 +14,8 @@ class Gig extends Model
         'description',
         'price',
         'location',
-        'date'
+        'date',
+        'user_id'
     ];
 
     public function user(): BelongsTo
