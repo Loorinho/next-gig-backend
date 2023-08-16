@@ -22,4 +22,12 @@ class UserController extends Controller
     {
         $user = User::create([]);
     }
+
+    public function gigs()
+    {
+        $users = User::all()->load('gigs');
+        return response()->json([
+            'message' => $users
+        ]);
+    }
 }
