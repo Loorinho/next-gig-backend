@@ -17,10 +17,12 @@ class GigController extends Controller
             'price' => $request->price,
             'date'=> $request->date
         ]);
+        $gigs = Gig::all();
 
         return response()->json([
             'message'=> $gig->title .' gig created successfully',
-            'gig'=>$gig
+            'gig'=>$gig,
+            'gigs'=>$gigs                           
         ],200);
     }
 
