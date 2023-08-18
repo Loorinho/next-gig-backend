@@ -29,6 +29,10 @@ Route::post('/login', [AuthenticationController::class, 'login']);
 Route::post('/gigs', [GigController::class, 'createGig']);
 Route::get('/gigs', [GigController::class, 'listGigs']);
 Route::get('/gigs/{id}', [GigController::class, 'getGig']);
+Route::put('/gigs/{id}', [GigController::class, 'editGig']);
+Route::delete('/gigs/{id}', [GigController::class, 'deleteGig']);
+
+
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // // Route::middleware('auth:api')->get('/user', function (Request $request) {
