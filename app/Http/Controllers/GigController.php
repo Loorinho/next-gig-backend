@@ -48,8 +48,14 @@ class GigController extends Controller
     }
 
     // Deleting a gig
-    public function getGig(Gig $gig)
+    public function deleteGig($id)
     {
+        $gig = Gig::find($id);
+        if($gig == null){
+            return response()->json([
+                'message' => "That gig is non existent"                  
+            ], 200);
+        }
         $gig->delete();
         $gigs = Gig::all()->load('user');
 
